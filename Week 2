@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Palace Hotel - Restaurant Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f0e6 0%, #e8e0d0 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: url('https://images.unsplash.com/photo-1578683015141-0acef2f9de54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 4.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #1a1a1a;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #d4af37;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 60px 0 40px;
+            color: #1a1a1a;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: #d4af37;
+            display: block;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .menu-category {
+            margin-bottom: 80px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px dashed #ddd;
+            transition: all 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateX(10px);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details h3 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .item-details p {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-weight: bold;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        .special {
+            color: #b8860b !important;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #d4af37;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 80px;
+        }
+
+        .chef-note {
+            background: #1a1a1a;
+            color: #d4af37;
+            padding: 40px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin: 60px 0;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-item {
+                flex-direction: column;
+            }
+            .price {
+                text-align: left;
+                margin-top: 10px;
+            }
+            .logo {
+                font-size: 3rem;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1 class="logo">Grand Palace Hotel</h1>
+            <p class="subtitle">Fine Dining Restaurant • Est. 1925</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#appetizers">Appetizers</a></li>
+            <li><a href="#soups">Soups & Salads</a></li>
+            <li><a href="#mains">Main Courses</a></li>
+            <li><a href="#seafood">Seafood</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#beverages">Beverages</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <div class="chef-note">
+            "Cooking is all about people. Food is perhaps the only universal thing that really has the power to bring everyone together." 
+            <br><br>
+            <strong>— Executive Chef Alessandro Rossi</strong>
+        </div>
+
+        <div id="appetizers" class="menu-category">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Beef Carpaccio</h3>
+                    <p>Thinly sliced raw beef, arugula, parmesan shavings, truffle oil, capers</p>
+                </div>
+                <div class="price">₹524</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Foie Gras Torchon <span class="special">House Specialty</span></h3>
+                    <p>Served with brioche toast, fig compote, and aged balsamic reduction</p>
+                </div>
+                <div class="price">₹438</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Burrata Caprese</h3>
+                    <p>Creamy burrata, heirloom tomatoes, fresh basil, 25-year balsamic</p>
+                </div>
+                <div class="price">₹322</div>
+            </div>
+        </div>
+
+        <div id="soups" class="menu-category">
+            <h2>Soups & Salads</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Lobster Bisque</h3>
+                    <p>Rich and creamy with cognac infusion, fresh lobster meat</p>
+                </div>
+                <div class="price">₹218</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Caesar Salad Grand Palace</h3>
+                    <p>Romaine hearts, white anchovies, parmesan crisp, house-made dressing</p>
+                </div>
+                <div class="price">₹816</div>
+            </div>
+        </div>
+
+        <div id="mains" class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Filet Mignon 8oz <span class="special">Signature Dish</span></h3>
+                    <p>Center-cut beef tenderloin, truffle mashed potatoes, red wine reduction</p>
+                </div>
+                <div class="price">₹968</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Roasted Rack of Lamb</h3>
+                    <p>Herb-crusted New Zealand lamb, rosemary jus, ratatouille</p>
+                </div>
+                <div class="price">₹672</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Truffle Risotto (Vegetarian)</h3>
+                    <p>Arborio rice, wild mushrooms, fresh black truffle shavings</p>
+                </div>
+                <div class="price">₹848</div>
+            </div>
+        </div>
+
+        <div id="seafood" class="menu-category">
+            <h2>From the Sea</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Atlantic Salmon</h3>
+                    <p>Pan-seared with lemon beurre blanc, asparagus, saffron rice</p>
+                </div>
+                <div class="price">₹952</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Whole Dover Sole Meunière</h3>
+                    <p>Prepared tableside, lemon-caper butter sauce</p>
+                </div>
+                <div class="price">₹588</div>
+            </div>
+        </div>
+
+        <div id="desserts" class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Chocolate Soufflé</h3>
+                    <p>Valrhona dark chocolate, vanilla bean ice cream (please allow 20 minutes)</p>
+                </div>
+                <div class="price">₹1018</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Crème Brûlée Trio</h3>
+                    <p>Classic vanilla, pistachio, and Grand Marnier</p>
+                </div>
+                <div class="price">₹716</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Tiramisu Grand Palace</h3>
+                    <p>Espresso-soaked ladyfingers, mascarpone, cocoa, gold leaf</p>
+                </div>
+                <div class="price">₹815</div>
+            </div>
+        </div>
+
+        <div id="beverages" class="menu-category">
+            <h2>Beverages</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Wine List</h3>
+                    <p>Extensive selection of Old and New World wines available by the glass or bottle</p>
+                </div>
+                <div class="price">From ₹914</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <h3>Mineral Water</h3>
+                    <p>San Pellegrino or Acqua Panna</p>
+                </div>
+                <div class="price">₹79</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Grand Palace Hotel • Fine Dining Restaurant</p>
+        <p>Open Daily 6:00 PM - 11:00 PM | Reservations: +91 88998899/</p>
+    </footer>
+
+</body>
+</html>
