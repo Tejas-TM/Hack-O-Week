@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Vlog</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    scroll-behavior:smooth;
+}
+
+/* Header */
+header{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* Cards Layout */
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:30px;
+}
+
+/* Card */
+.card{
+    width:260px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    text-decoration:none;
+    color:black;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:10px;
+}
+
+.card p{
+    padding:0 10px 15px;
+}
+
+/* Destination Detail Section */
+.detail{
+    padding:50px 20px;
+    text-align:center;
+    border-top:1px solid #ddd;
+    background:white;
+}
+
+.detail img{
+    width:80%;
+    max-width:600px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.detail h2{
+    margin-bottom:10px;
+}
+
+/* Footer */
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌍 Travel Vlog Destinations</h1>
+</header>
+
+<!-- DESTINATION CARDS -->
+<div class="cards">
+
+    <a href="#paris" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1549887534-3db6d5e1f47c">
+        <h3>Paris</h3>
+        <p>Explore Paris Travel Guide</p>
+    </a>
+
+    <a href="#maldives" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
+        <h3>Maldives</h3>
+        <p>Explore Maldives Travel Guide</p>
+    </a>
+
+    <a href="#switzerland" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+        <h3>Switzerland</h3>
+        <p>Explore Switzerland Travel Guide</p>
+    </a>
+    <a href="#dubai" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def">
+        <h3>Dubai</h3>
+        <p>Explore Dubai Travel Guide</p>
+    </a>
+
+    <a href="#goa" target="_blank" class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+        <h3>Goa</h3>
+        <p>Explore Goa Travel Guide</p>
+    </a>
+
+</div>
+
+<!-- ================= DESTINATION DETAILS ================= -->
+
+<!-- Paris -->
+<section id="paris" class="detail">
+    <h2>🗼Paris Travel Guide</h2>
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+    <p><b>About:</b> Paris is the capital of France, known as the City of Love.</p>
+    <p><b>Top Attractions:</b> Eiffel Tower, Louvre Museum, Notre Dame, Seine River Cruise</p>
+    <p><b>Best Time:</b> April – June, September – October</p>
+    <p><b>Budget:</b> ₹1.5L – ₹2.5L (5–6 days)</p>
+</section>
+
+<!-- Maldives -->
+<section id="maldives" class="detail">
+    <h2>🏝 Maldives Travel Guide</h2>
+    <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd">
+    <p><b>About:</b> Tropical paradise with crystal clear water and luxury water villas.</p>
+    <p><b>Activities:</b> Snorkeling, Scuba Diving, Island Hopping, Sunset Cruise</p>
+    <p><b>Best Time:</b> November – April</p>
+    <p><b>Budget:</b> ₹1.2L – ₹3L</p>
+</section>
+
+<!-- Switzerland -->
+<section id="switzerland" class="detail">
+    <h2>🏔 Switzerland Travel Guide</h2>
+    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
+    <p><b>About:</b> Famous for mountains, lakes, and scenic beauty.</p>
+    <p><b>Top Places:</b> Zurich, Interlaken, Lucerne, Jungfrau</p>
+    <p><b>Best Time:</b> June – September (Summer), December – February (Snow)</p>
+    <p><b>Budget:</b> ₹2L – ₹3.5L</p>
+</section>
+<!-- Dubai -->
+<section id="dubai" class="detail">
+    <h2>🏙 Dubai Travel Guide</h2>
+    <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090">
+    <p><b>About:</b> Famous for luxury lifestyle, skyscrapers, and desert safari.</p>
+    <p><b>Top Attractions:</b> Burj Khalifa, Palm Jumeirah, Desert Safari, Dubai Mall</p>
+    <p><b>Best Time:</b> November – March</p>
+    <p><b>Budget:</b> ₹90K – ₹1.8L</p>
+</section>
+
+<!-- Goa -->
+<section id="goa" class="detail">
+    <h2>🏖 Goa Travel Guide</h2>
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    <p><b>About:</b> India's top beach destination with nightlife and water sports.</p>
+    <p><b>Top Attractions:</b> Baga Beach, Calangute, Dudhsagar Falls, Fort Aguada</p>
+    <p><b>Best Time:</b> November – February</p>
+    <p><b>Budget:</b> ₹15K – ₹40K</p>
+</section>
+
+<footer>
+    <p>© 2026 Travel Vlog </p>
+</footer>
+
+</body>
+</html>
