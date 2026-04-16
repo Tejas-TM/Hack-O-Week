@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart To-Do Scheduler</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+}
+
+.container{
+background:white;
+padding:25px;
+width:420px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h2{
+color:#333;
+}
+
+input{
+padding:10px;
+margin:5px;
+border-radius:6px;
+border:1px solid #ccc;
+width:80%;
+}
+
+button{
+padding:10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.addBtn{
+background:#4CAF50;
+color:white;
+}
+
+.suggestions button{
+margin:3px;
+background:#eee;
+}
+
+ul{
+padding:0;
+}
+
+li{
+list-style:none;
+background:#f9f9f9;
+margin:8px 0;
+padding:10px;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.deleteBtn{
+background:red;
+color:white;
+padding:6px 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>📅 Smart To-Do Scheduler</h2>
+
+<input type="text" id="task" placeholder="Enter task"><br>
+
+<input type="datetime-local" id="time"><br>
+
+<button class="addBtn" onclick="addTask()">Add Task</button>
+
+<div class="suggestions">
+
+<p><b>Suggestions:</b></p>
+
+<button onclick="suggest('Cycling')">🚴 Cycling</button>
+<button onclick="suggest('Studying')">📚 Studying</button>
+<button onclick="suggest('Break')">☕ Break</button>
+<button onclick="suggest('Exercise')">💪 Exercise</button>
+
+</div>
+
+<ul id="list"></ul>
+
+</div>
+
+<script>
+
+function suggest(name){
+document.getElementById("task").value=name;
+}
+
+function addTask(){
+
+let task=document.getElementById("task").value;
+let time=document.getElementById("time").value;
+
+if(task=="" || time==""){
+alert("Enter task and time");
+return;
+}
+
+let list=document.getElementById("list");
+
+let li=document.createElement("li");
+
+li.innerHTML=task+" - "+time;
+
+let del=document.createElement("button");
+del.innerHTML="Delete";
+del.className="deleteBtn";
+
+li.appendChild(del);
+
+list.appendChild(li);
+
+let target=new Date(time).getTime();
+let now=new Date().getTime();
+
+let delay=target-now;
+
+let timer=setTimeout(function(){
+
+alert("⏰ Reminder: "+task);
+
+li.remove();   // AUTO DELETE TASK AFTER REMINDER
+
+},delay);
+
+del.onclick=function(){
+
+clearTimeout(timer);
+li.remove();
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
